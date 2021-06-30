@@ -10,7 +10,6 @@ run apt-get install -y flex bison texinfo python-dev g++ unzip
 # QEMU dependencies
 run apt-get install -y qemu-system-i386
 
-
 # setup and compile RTEMS BSP
 run mkdir -p ${HOME}/rtems-5 \
   && cd ${HOME} \
@@ -36,7 +35,7 @@ run mkdir -p ${HOME}/rtems-5 \
   && make \
   && make install
 
-# install git from source for updated version
+# install git from source for updated version required by checkout github action
 run apt-get install -y libz-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext cmake
 run curl -o git.tar.gz https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.26.2.tar.gz
 run tar -zxf git.tar.gz && rm git.tar.gz
